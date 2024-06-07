@@ -11,6 +11,10 @@ public class Giocatore {
     private List<Carta> equipaggiamento;
     private Carta cartaEquipaggiata;
 
+    public Carta getCartaEquipaggiata() {
+        return cartaEquipaggiata;
+    }
+
     public void setEquipaggiamento(String equipaggiamento) {
         for(Carta mano : this.mano) {
             if(equipaggiamento.equalsIgnoreCase(mano.getNome())) {

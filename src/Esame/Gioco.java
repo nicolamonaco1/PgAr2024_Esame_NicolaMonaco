@@ -192,18 +192,20 @@ public class Gioco {
                     int distanza = calcolaDistanza(giocatore, bersaglio);
                     if (distanza <= 1) {
                         System.out.println(i + ": " + bersaglio.getNome());
-                    } else {
-                        for (Carta cartaArma : giocatore.getMano()) {
-                            if ((cartaArma.getNome().equals("Schofield") && distanza <= 2) ||
-                                    (cartaArma.getNome().equals("Remington") && distanza <= 3) ||
-                                    (cartaArma.getNome().equals("Rev. Carabine") && distanza <= 4) ||
-                                    (cartaArma.getNome().equals("Winchester") && distanza <= 5)) {
+                        indici.add(i);
+                    } else if (giocatore.getCartaEquipaggiata() != null){
+                            if ((giocatore.getCartaEquipaggiata().getNome().equalsIgnoreCase("Schofield") && distanza <= 2) ||
+                                    (giocatore.getCartaEquipaggiata().getNome().equalsIgnoreCase("Remington") && distanza <= 3) ||
+                                    (giocatore.getCartaEquipaggiata().getNome().equalsIgnoreCase("Rev. Carabine")  && distanza <= 4 ||
+                                            (giocatore.getCartaEquipaggiata().getNome().equalsIgnoreCase("Winchester") && distanza <=5)))
+                            {
                                 System.out.println(i + ": " + bersaglio.getNome());
                                 indici.add(i);
                                 break;
                             }
+
                         }
-                    }
+
                 }
             }
             int scelta;
